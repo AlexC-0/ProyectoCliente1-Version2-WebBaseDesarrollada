@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>ProyectoCliente1 | Sistemas de baterias de alto voltaje</title>
+    <meta name="description" content="Sistemas de baterias de alto voltaje para OEMs y fabricantes que desarrollan vehiculos electrificados para aplicaciones exigentes.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="ProyectoCliente1 inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span class="brand-copy">
+          <strong>ProyectoCliente1</strong>
+          <small data-i18n="brand.claim">High Voltage Battery Systems</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Navegacion principal">
+        <div class="nav-map-widget">
+          <button class="nav-map-button" type="button" aria-expanded="false" aria-controls="nav-map-menu">
+            <span class="map-icon" aria-hidden="true"></span>
+            <span data-i18n="nav.map">Mapa web</span>
+          </button>
+          <div id="nav-map-menu" class="nav-map-menu">
+            <div class="mini-orbit" aria-label="Mapa web reducido">
+              <span class="mini-core">
+                <strong>HV</strong>
+                <small data-i18n="orbit.core">Arquitectura modular</small>
+              </span>
+              <span class="mini-ring" aria-hidden="true"></span>
+              <a class="mini-item" href="#productos" data-mini-orbit="products">
+                <span class="section-visual visual-products" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong data-i18n="orbit.products">Productos</strong>
+                <small data-i18n="orbit.productsText">NMC, LFP y BMS con datos clave.</small>
+              </a>
+              <a class="mini-item" href="#aplicaciones" data-mini-orbit="apps">
+                <span class="section-visual visual-apps" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong data-i18n="orbit.apps">Aplicaciones</strong>
+                <small data-i18n="orbit.appsText">Bus, marino, agricola, VCL, carga y rail.</small>
+              </a>
+              <a class="mini-item" href="#empresa" data-mini-orbit="company">
+                <span class="section-visual visual-company" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong data-i18n="orbit.company">Empresa</strong>
+                <small data-i18n="orbit.companyText">Capacidades para OEMs exigentes.</small>
+              </a>
+              <a class="mini-item" href="#proceso" data-mini-orbit="process">
+                <span class="section-visual visual-process" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong data-i18n="orbit.process">Proceso</strong>
+                <small data-i18n="orbit.processText">Presupuesto, integracion y puesta en marcha.</small>
+              </a>
+              <a class="mini-item" href="#documentacion" data-mini-orbit="docs">
+                <span class="section-visual visual-docs" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong data-i18n="orbit.docs">Documentacion</strong>
+                <small data-i18n="orbit.docsText">CAD, CAN, HV y puesta en marcha.</small>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="nav-cta" href="#contacto" aria-label="Contacto">
+          <span class="mail-symbol mini" aria-hidden="true"></span>
+          <span data-i18n="nav.contact">Contacto</span>
+        </a>
+        <div class="language-widget">
+          <button class="language-button" type="button" aria-expanded="false" aria-controls="language-menu" aria-label="Seleccionar idioma">
+            <span class="planet-icon" aria-hidden="true"></span>
+            <span class="current-lang">ES</span>
+          </button>
+          <div id="language-menu" class="language-menu" role="menu">
+            <button type="button" data-lang="es" role="menuitem">ES Espanol</button>
+            <button type="button" data-lang="en" role="menuitem">EN English</button>
+            <button type="button" data-lang="eu" role="menuitem">EU Euskara</button>
+            <button type="button" data-lang="fr" role="menuitem">FR Francais</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="section-shell section-block orbit-presentation">
+        <div class="section-heading orbit-heading">
+          <p class="eyebrow" data-i18n="orbit.eyebrow">Mapa de la web</p>
+          <h2 data-i18n="orbit.title">Un recorrido visual por las areas clave.</h2>
+          <p data-i18n="orbit.text">La navegacion principal se presenta como una orbita de secciones: productos, aplicaciones, empresa, proceso y documentacion. Al pasar sobre cada punto, aparece el contexto sin obligar a entrar todavia.</p>
+        </div>
+        <div class="orbit-stage" aria-label="Mapa visual de secciones">
+          <div class="orbit-core">
+            <strong>HV</strong>
+            <span data-i18n="orbit.core">Arquitectura modular</span>
+          </div>
+          <div class="orbit-ring" aria-hidden="true"></div>
+          <a class="orbit-item orbit-products" href="#productos" data-orbit="products">
+            <span class="section-visual visual-products" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong data-i18n="orbit.products">Productos</strong>
+            <small data-i18n="orbit.productsText">NMC, LFP y BMS con datos clave.</small>
+          </a>
+          <a class="orbit-item orbit-apps" href="#aplicaciones" data-orbit="apps">
+            <span class="section-visual visual-apps" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong data-i18n="orbit.apps">Aplicaciones</strong>
+            <small data-i18n="orbit.appsText">Bus, marino, agricola, VCL, carga y rail.</small>
+          </a>
+          <a class="orbit-item orbit-process" href="#proceso" data-orbit="process">
+            <span class="section-visual visual-process" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong data-i18n="orbit.process">Proceso</strong>
+            <small data-i18n="orbit.processText">Presupuesto, integracion y puesta en marcha.</small>
+          </a>
+          <a class="orbit-item orbit-company" href="#empresa" data-orbit="company">
+            <span class="section-visual visual-company" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong data-i18n="orbit.company">Empresa</strong>
+            <small data-i18n="orbit.companyText">Capacidades para OEMs exigentes.</small>
+          </a>
+          <a class="orbit-item orbit-docs" href="#documentacion" data-orbit="docs">
+            <span class="section-visual visual-docs" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong data-i18n="orbit.docs">Documentacion</strong>
+            <small data-i18n="orbit.docsText">CAD, CAN, HV y puesta en marcha.</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div class="section-shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Sistemas de baterias de alto voltaje</p>
+            <h1 data-i18n="hero.title">Soluciones avanzadas para fabricantes que electrifican aplicaciones exigentes.</h1>
+            <p class="hero-text" data-i18n="hero.text">Arquitecturas modulares, packs en serie, gestion multipack y soporte tecnico para OEMs que necesitan integrar bateria, comunicacion, seguridad y rendimiento desde fases tempranas de diseno.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#productos" data-i18n="hero.products">Ver sistemas</a>
+              <a class="button secondary" href="#contacto" data-i18n="hero.contact">Solicitar analisis tecnico</a>
+            </div>
+          </div>
+
+          <aside class="hero-system" aria-label="Resumen del sistema">
+            <div class="system-panel">
+              <span class="system-line line-top"></span>
+              <span class="system-module module-one"></span>
+              <span class="system-module module-two"></span>
+              <span class="system-module module-three"></span>
+              <span class="system-line line-bottom"></span>
+              <span class="system-node node-one"></span>
+              <span class="system-node node-two"></span>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <strong>35-56 kWh</strong>
+                <span data-i18n="metric.energy">Energia por pack</span>
+              </div>
+              <div>
+                <strong>333-666 V</strong>
+                <span data-i18n="metric.voltage">Tensiones nominales</span>
+              </div>
+              <div>
+                <strong>IP67</strong>
+                <span data-i18n="metric.protection">Envolvente industrial</span>
+              </div>
+              <div>
+                <strong>20 packs</strong>
+                <span data-i18n="metric.management">Gestion multipack</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-shell intro-band" aria-label="Resumen corporativo">
+        <div>
+          <p class="eyebrow" data-i18n="intro.eyebrow">Propuesta base desarrollada</p>
+          <h2 data-i18n="intro.title">La misma logica industrial, con una web mas clara, mas tecnica y mas comercial.</h2>
+        </div>
+        <p data-i18n="intro.text">Esta version conserva el mapa de la web actual: aplicaciones, productos, empresa, proceso, documentacion y contacto. La diferencia esta en la jerarquia, la lectura rapida y la capacidad de convertir una visita tecnica en una solicitud cualificada.</p>
+      </section>
+
+      <section id="productos" class="section-shell section-block">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow" data-i18n="products.eyebrow">Productos</p>
+            <h2 data-i18n="products.title">Packs y sistemas para integracion profesional.</h2>
+          </div>
+          <p data-i18n="products.text">Las familias se presentan con datos clave, compatibilidad de aplicacion y CTA tecnico. La informacion esta ordenada para quien compara arquitectura, dimensiones, energia, tension y soporte.</p>
+        </div>
+
+        <div class="product-carousel-block">
+          <div class="carousel-copy">
+            <p class="eyebrow" data-i18n="carousel.eyebrow">Vista rapida</p>
+            <h3 data-i18n="carousel.title">Una cinta visual para reconocer la familia antes de leer la ficha.</h3>
+          </div>
+          <div class="product-carousel" aria-label="Carrusel visual de productos">
+            <article class="carousel-slide is-active" data-product="nmc" tabindex="0">
+              <span class="carousel-image carousel-nmc" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="carousel-reveal">
+                <strong>Series NMC</strong>
+                <span data-i18n="carousel.nmc">Alta densidad y formato slim.</span>
+              </div>
+            </article>
+            <article class="carousel-slide" data-product="lfp" tabindex="0">
+              <span class="carousel-image carousel-lfp" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="carousel-reveal">
+                <strong>Series LFP</strong>
+                <span data-i18n="carousel.lfp">Vida util, seguridad y escalado.</span>
+              </div>
+            </article>
+            <article class="carousel-slide" data-product="bms" tabindex="0">
+              <span class="carousel-image carousel-bms" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="carousel-reveal">
+                <strong>Supermaster BMS</strong>
+                <span data-i18n="carousel.bms">Control multipack centralizado.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="product-layout">
+          <div class="product-tabs" role="tablist" aria-label="Familias de producto">
+            <button class="product-tab is-active" type="button" role="tab" aria-selected="true" data-product="nmc">
+              <span>01</span>
+              <strong>Series NMC</strong>
+              <small data-i18n="products.nmcShort">Alta densidad y formato slim</small>
+            </button>
+            <button class="product-tab" type="button" role="tab" aria-selected="false" data-product="lfp">
+              <span>02</span>
+              <strong>Series LFP</strong>
+              <small data-i18n="products.lfpShort">Seguridad, vida util y escalado</small>
+            </button>
+            <button class="product-tab" type="button" role="tab" aria-selected="false" data-product="bms">
+              <span>03</span>
+              <strong>Supermaster BMS</strong>
+              <small data-i18n="products.bmsShort">Control central multipack</small>
+            </button>
+          </div>
+
+          <article class="product-detail" aria-live="polite">
+            <div class="product-figure" aria-hidden="true">
+              <div class="product-machine product-machine-nmc" data-product-visual>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="tag" data-product-detail="tag">Series NMC</p>
+              <h3 data-product-detail="title">Pack compacto de alta densidad energetica</h3>
+              <p data-product-detail="summary">Baterias fabricadas en serie con espesor compacto, montaje versatil e integracion horizontal o vertical para aplicaciones exigentes.</p>
+              <div class="spec-grid" data-product-detail="specs"></div>
+              <div class="compatibility-row" data-product-detail="apps"></div>
+              <div class="detail-actions">
+                <button class="button primary" type="button" data-add-product data-i18n="products.add">Incluir en consulta</button>
+                <a class="button secondary" href="#documentacion" data-i18n="products.docs">Ver documentacion</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="aplicaciones" class="section-block applications-section">
+        <div class="section-shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="apps.eyebrow">Casos de uso</p>
+              <h2 data-i18n="apps.title">Aplicaciones de movilidad electrica donde la integracion importa.</h2>
+            </div>
+            <p data-i18n="apps.text">La navegacion por aplicacion reproduce la logica actual, pero con tarjetas mas escaneables, mensajes mas consistentes y CTA orientado a validacion tecnica.</p>
+          </div>
+
+          <div class="application-grid">
+            <article class="application-card">
+              <span class="app-icon">BUS</span>
+              <h3 data-i18n="apps.busTitle">Autobuses electricos e hidrogeno</h3>
+              <p data-i18n="apps.busText">Solucion multi-rack compatible con estandares del mercado para vehiculos urbanos e interurbanos.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+            <article class="application-card">
+              <span class="app-icon">SEA</span>
+              <h3 data-i18n="apps.seaTitle">Marino electrico e hibrido</h3>
+              <p data-i18n="apps.seaText">Arquitecturas paralelizadas para unidades de potencia electricas e hibridas en entornos exigentes.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+            <article class="application-card">
+              <span class="app-icon">AGR</span>
+              <h3 data-i18n="apps.agrTitle">Agricola</h3>
+              <p data-i18n="apps.agrText">Sistemas para demandas de energia y potencia sobre el terreno, con foco en robustez e integracion.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+            <article class="application-card">
+              <span class="app-icon">VCL</span>
+              <h3 data-i18n="apps.vclTitle">Vehiculos comerciales ligeros</h3>
+              <p data-i18n="apps.vclText">Pack compatible con integracion en automocion, series cortas y medias y necesidades de industrializacion.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+            <article class="application-card">
+              <span class="app-icon">CHG</span>
+              <h3 data-i18n="apps.chargeTitle">Estaciones de carga moviles</h3>
+              <p data-i18n="apps.chargeText">Baterias para estaciones semiestacionarias, eventos temporales y soporte energetico local.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+            <article class="application-card">
+              <span class="app-icon">RAIL</span>
+              <h3 data-i18n="apps.railTitle">Ferrocarril</h3>
+              <p data-i18n="apps.railText">Solucion multipack para grandes necesidades energeticas en operaciones electricas ferroviarias.</p>
+              <a href="#contacto" data-i18n="apps.cta">Validar aplicacion</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="empresa" class="section-shell section-block company-section">
+        <div class="company-copy">
+          <p class="eyebrow" data-i18n="company.eyebrow">Empresa</p>
+          <h2 data-i18n="company.title">Capacidades centradas en OEMs con aplicaciones exigentes.</h2>
+          <p data-i18n="company.text">La web debe explicar mejor para quien es la solucion: fabricantes que no quieren adaptar su vehiculo a una bateria cerrada, equipos que necesitan agilidad, compatibilidad de mercado, soporte tecnico y produccion de series cortas o medias.</p>
+        </div>
+
+        <div class="capability-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="company.capOneTitle">Flexibilidad de integracion</h3>
+            <p data-i18n="company.capOneText">Montaje vertical u horizontal, datos CAD y validacion temprana de envolvente.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="company.capTwoTitle">Soporte tecnico cercano</h3>
+            <p data-i18n="company.capTwoText">Acompanamiento en diseno, comunicacion, instalacion inicial y puesta en marcha.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="company.capThreeTitle">Series cortas y medias</h3>
+            <p data-i18n="company.capThreeText">Orientacion a proyectos que necesitan industrializacion sin perder capacidad de adaptacion.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3 data-i18n="company.capFourTitle">Arquitectura multipack</h3>
+            <p data-i18n="company.capFourText">Escalado modular de energia y control coordinado de comunicacion, seguridad y rendimiento.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="proceso" class="section-block process-section">
+        <div class="section-shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow" data-i18n="process.eyebrow">Como trabajamos</p>
+              <h2 data-i18n="process.title">Tres momentos claros desde el presupuesto hasta la primera instalacion.</h2>
+            </div>
+            <p data-i18n="process.text">La version desarrollada convierte el proceso actual en una lectura ordenada: antes de la oferta, tras el pedido y durante la puesta en marcha.</p>
+          </div>
+
+          <div class="process-timeline">
+            <article>
+              <span>01</span>
+              <h3 data-i18n="process.oneTitle">Presupuesto y viabilidad</h3>
+              <ul>
+                <li data-i18n="process.oneA">Validacion mecanica con datos CAD de envolvente.</li>
+                <li data-i18n="process.oneB">Revision de comunicacion con vehiculo o aplicacion.</li>
+                <li data-i18n="process.oneC">Simulacion de prestaciones segun perfil de uso.</li>
+                <li data-i18n="process.oneD">Definicion del grado de personalizacion viable.</li>
+              </ul>
+            </article>
+            <article>
+              <span>02</span>
+              <h3 data-i18n="process.twoTitle">Pedido e integracion detallada</h3>
+              <ul>
+                <li data-i18n="process.twoA">Entrega de manual y documentacion tecnica pertinente.</li>
+                <li data-i18n="process.twoB">Definicion mecanica, electrica, termica y de comunicaciones.</li>
+                <li data-i18n="process.twoC">Alineacion de datos macro acordados en presupuesto.</li>
+              </ul>
+            </article>
+            <article>
+              <span>03</span>
+              <h3 data-i18n="process.threeTitle">Puesta en marcha</h3>
+              <ul>
+                <li data-i18n="process.threeA">Recepcion: integridad mecanica, electrica y comunicaciones.</li>
+                <li data-i18n="process.threeB">Capacitacion en uso del producto.</li>
+                <li data-i18n="process.threeC">Soporte in situ para la integracion inicial.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="documentacion" class="section-shell section-block docs-section">
+        <div class="docs-copy">
+          <p class="eyebrow" data-i18n="docs.eyebrow">Documentacion tecnica</p>
+          <h2 data-i18n="docs.title">Informacion tecnica estructurada para decidir el siguiente paso.</h2>
+          <p data-i18n="docs.text">Ficha de producto, dimensiones, energia, tension, comunicacion, requisitos de integracion y rango operativo deben aparecer vinculados a una consulta clara, no dispersos en bloques repetidos.</p>
+        </div>
+        <div class="docs-panel">
+          <article>
+            <span>CAD</span>
+            <strong data-i18n="docs.cardOne">Datos de envolvente</strong>
+          </article>
+          <article>
+            <span>CAN</span>
+            <strong data-i18n="docs.cardTwo">Comunicacion y control</strong>
+          </article>
+          <article>
+            <span>HV</span>
+            <strong data-i18n="docs.cardThree">Arquitectura de tension</strong>
+          </article>
+          <article>
+            <span>OPS</span>
+            <strong data-i18n="docs.cardFour">Manual y puesta en marcha</strong>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="section-block contact-section">
+        <div class="section-shell contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contacto tecnico-comercial</p>
+            <h2 data-i18n="contact.title">Cuanto mejor llegue la necesidad, mas rapida sera la propuesta.</h2>
+            <p data-i18n="contact.text">El formulario recoge aplicacion, fase, familia de producto y contexto tecnico. Es el punto donde la web deja de ser escaparate y empieza a cualificar una oportunidad real.</p>
+            <a class="direct-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@proyectocliente1.com&su=Consulta%20tecnica%20ProyectoCliente1" target="_blank" rel="noopener noreferrer" aria-label="Abrir correo directo">
+              <span class="mail-symbol" aria-hidden="true"></span>
+              <span>contacto@proyectocliente1.com</span>
+            </a>
+          </div>
+
+          <form class="lead-form" action="#" method="post" accept-charset="UTF-8" novalidate>
+            <label class="honeypot-field" aria-hidden="true" tabindex="-1">
+              <span>No rellenar</span>
+              <input type="text" name="website" autocomplete="off" tabindex="-1">
+            </label>
+            <div class="form-row">
+              <label>
+                <span data-i18n="form.name">Nombre</span>
+                <input type="text" name="name" autocomplete="name" minlength="2" maxlength="80" spellcheck="false" required>
+              </label>
+              <label>
+                <span data-i18n="form.company">Empresa</span>
+                <input type="text" name="company" autocomplete="organization" minlength="2" maxlength="120" spellcheck="false" required>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="form.email">Correo profesional</span>
+                <input type="email" name="email" autocomplete="email" inputmode="email" maxlength="160" spellcheck="false" required>
+              </label>
+              <label>
+                <span data-i18n="form.country">Pais</span>
+                <input type="text" name="country" autocomplete="country-name" maxlength="80" spellcheck="false">
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="form.application">Aplicacion</span>
+                <select name="application" required>
+                  <option value="" data-i18n="form.select">Selecciona una opcion</option>
+                  <option value="bus" data-i18n="option.bus">Autobuses</option>
+                  <option value="sea" data-i18n="option.sea">Marino</option>
+                  <option value="agr" data-i18n="option.agr">Agricola</option>
+                  <option value="vcl" data-i18n="option.vcl">Vehiculos comerciales ligeros</option>
+                  <option value="charge" data-i18n="option.charge">Estaciones de carga moviles</option>
+                  <option value="rail" data-i18n="option.rail">Ferrocarril</option>
+                  <option value="unknown" data-i18n="option.unknown">A definir</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="form.product">Producto de interes</span>
+                <select name="product" required>
+                  <option value="" data-i18n="form.select">Selecciona una opcion</option>
+                  <option value="nmc">Series NMC</option>
+                  <option value="lfp">Series LFP</option>
+                  <option value="bms">Supermaster BMS</option>
+                  <option value="system" data-i18n="option.system">Sistema completo</option>
+                  <option value="compare" data-i18n="option.compare">Comparar alternativas</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="form.stage">Fase del proyecto</span>
+                <select name="stage" required>
+                  <option value="" data-i18n="form.select">Selecciona una opcion</option>
+                  <option value="quote" data-i18n="option.quote">Presupuesto inicial</option>
+                  <option value="design" data-i18n="option.design">Diseno de integracion</option>
+                  <option value="validation" data-i18n="option.validation">Validacion tecnica</option>
+                  <option value="purchase" data-i18n="option.purchase">Compra o industrializacion</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="form.volume">Volumen estimado</span>
+                <select name="volume">
+                  <option value="" data-i18n="form.optional">Opcional</option>
+                  <option value="prototype" data-i18n="option.prototype">Prototipo</option>
+                  <option value="short" data-i18n="option.short">Serie corta</option>
+                  <option value="medium" data-i18n="option.medium">Serie media</option>
+                  <option value="open" data-i18n="option.open">A definir</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span data-i18n="form.message">Necesidad tecnica</span>
+              <textarea name="message" rows="5" maxlength="1400" data-i18n-placeholder="form.placeholder" placeholder="Energia requerida, tension, restricciones mecanicas, comunicaciones, plazos o contexto del vehiculo." spellcheck="true"></textarea>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" name="privacy" value="accepted" required>
+              <span data-i18n="form.privacy">Acepto el tratamiento de mis datos para responder a esta solicitud.</span>
+            </label>
+            <button class="button primary full" type="submit" data-i18n="form.submit">Enviar consulta</button>
+            <p class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-inner">
+        <div class="footer-brand">
+          <span class="footer-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <div>
+            <strong>ProyectoCliente1</strong>
+            <p data-i18n="footer.text">Sistemas de baterias de alto voltaje para aplicaciones exigentes de movilidad electrica.</p>
+          </div>
+        </div>
+        <div class="footer-mail-block">
+          <a class="footer-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@proyectocliente1.com&su=Consulta%20tecnica%20ProyectoCliente1" target="_blank" rel="noopener noreferrer" aria-label="Contacto directo por correo">
+            <span class="mail-symbol large" aria-hidden="true"></span>
+          </a>
+          <div>
+            <strong data-i18n="footer.mailTitle">Contacto directo</strong>
+            <p>contacto@proyectocliente1.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-shell footer-bottom">
+        <span>ProyectoCliente1</span>
+        <span data-i18n="footer.scope">Prototipo web base desarrollada</span>
+      </div>
+    </footer>
+
+    <button class="scroll-top" type="button" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 5l-7 7h4v7h6v-7h4l-7-7z"></path>
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+  </body>
+</html>
