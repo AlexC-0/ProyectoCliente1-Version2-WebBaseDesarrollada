@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>ProyectoCliente1 | Sistemas de baterias de alto voltaje</title>
     <meta name="description" content="Sistemas de baterias de alto voltaje para OEMs y fabricantes que desarrollan vehiculos electrificados para aplicaciones exigentes.">
@@ -427,7 +427,7 @@
             </a>
           </div>
 
-          <form class="lead-form" action="#" method="post" accept-charset="UTF-8" novalidate>
+          <form class="lead-form" action="backend/contact.php" method="post" accept-charset="UTF-8" novalidate>
             <label class="honeypot-field" aria-hidden="true" tabindex="-1">
               <span>No rellenar</span>
               <input type="text" name="website" autocomplete="off" tabindex="-1">
@@ -502,7 +502,7 @@
             </div>
             <label>
               <span data-i18n="form.message">Necesidad tecnica</span>
-              <textarea name="message" rows="5" maxlength="1400" data-i18n-placeholder="form.placeholder" placeholder="Energia requerida, tension, restricciones mecanicas, comunicaciones, plazos o contexto del vehiculo." spellcheck="true"></textarea>
+              <textarea name="message" rows="5" minlength="12" maxlength="1400" data-i18n-placeholder="form.placeholder" placeholder="Energia requerida, tension, restricciones mecanicas, comunicaciones, plazos o contexto del vehiculo." spellcheck="true" required></textarea>
             </label>
             <label class="check-row">
               <input type="checkbox" name="privacy" value="accepted" required>
@@ -539,6 +539,52 @@
         <span data-i18n="footer.scope">Prototipo web base desarrollada</span>
       </div>
     </footer>
+
+    <div class="process-widget">
+      <button class="process-trigger" type="button" aria-expanded="false" aria-controls="proceso-guia" aria-label="Abrir proceso guiado" data-i18n-aria-label="processGuide.open">
+        <span class="process-arrow" aria-hidden="true"></span>
+        <span data-i18n="processGuide.eyebrow">PROCESO GUIADO</span>
+      </button>
+      <aside id="proceso-guia" class="process-panel" aria-label="Proceso guiado de navegacion" aria-hidden="true" tabindex="-1">
+        <div class="process-panel-head">
+          <div>
+            <p class="eyebrow" data-i18n="processGuide.eyebrow">Proceso guiado</p>
+            <h2 data-i18n="processGuide.title">Como recorrer la version base desarrollada.</h2>
+          </div>
+          <button class="process-close" type="button" aria-label="Cerrar proceso guiado" data-i18n-aria-label="processGuide.close">&times;</button>
+        </div>
+        <ol class="process-steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3 data-i18n="processGuide.oneTitle">Mapa orbital como entrada principal</h3>
+              <p data-i18n="processGuide.oneText">La primera pantalla organiza productos, aplicaciones, empresa, proceso y documentacion en una orbita. Sirve para que el cliente reconozca la estructura de la web actual, pero con una navegacion mas visual y directa.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3 data-i18n="processGuide.twoTitle">Productos con lectura tecnica progresiva</h3>
+              <p data-i18n="processGuide.twoText">La cinta visual ayuda a identificar familias NMC, LFP y BMS sin saturar. Despues, las fichas comparan energia, tension, arquitectura y aplicaciones compatibles para llevar la visita hacia una consulta cualificada.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3 data-i18n="processGuide.threeTitle">Aplicaciones y empresa con foco OEM</h3>
+              <p data-i18n="processGuide.threeText">Las secciones de aplicaciones y capacidades explican para quien encaja la solucion: fabricantes con requisitos mecanicos, electricos, termicos, de comunicacion y series cortas o medias.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h3 data-i18n="processGuide.fourTitle">Proceso, documentacion y contacto conectados</h3>
+              <p data-i18n="processGuide.fourText">El recorrido termina en un formulario validado que recoge aplicacion, producto, fase, volumen y necesidad tecnica. La documentacion aparece como apoyo a la decision, no como informacion suelta.</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
+    </div>
 
     <button class="scroll-top" type="button" aria-label="Volver al inicio">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">

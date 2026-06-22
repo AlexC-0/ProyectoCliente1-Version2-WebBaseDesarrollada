@@ -23,6 +23,9 @@ const productSelect = document.querySelector("select[name='product']");
 const leadForm = document.querySelector(".lead-form");
 const feedback = document.querySelector(".form-feedback");
 const scrollTopButton = document.querySelector(".scroll-top");
+const processTrigger = document.querySelector(".process-trigger");
+const processPanel = document.querySelector("#proceso-guia");
+const processClose = document.querySelector(".process-close");
 
 const translations = {
   es: {
@@ -116,6 +119,18 @@ const translations = {
     "process.threeA": "Recepcion: integridad mecanica, electrica y comunicaciones.",
     "process.threeB": "Capacitacion en uso del producto.",
     "process.threeC": "Soporte in situ para la integracion inicial.",
+    "processGuide.eyebrow": "PROCESO GUIADO",
+    "processGuide.open": "Abrir proceso guiado",
+    "processGuide.close": "Cerrar proceso guiado",
+    "processGuide.title": "Como recorrer la version base desarrollada.",
+    "processGuide.oneTitle": "Mapa orbital como entrada principal",
+    "processGuide.oneText": "La primera pantalla organiza productos, aplicaciones, empresa, proceso y documentacion en una orbita. Sirve para que el cliente reconozca la estructura de la web actual, pero con una navegacion mas visual y directa.",
+    "processGuide.twoTitle": "Productos con lectura tecnica progresiva",
+    "processGuide.twoText": "La cinta visual ayuda a identificar familias NMC, LFP y BMS sin saturar. Despues, las fichas comparan energia, tension, arquitectura y aplicaciones compatibles para llevar la visita hacia una consulta cualificada.",
+    "processGuide.threeTitle": "Aplicaciones y empresa con foco OEM",
+    "processGuide.threeText": "Las secciones de aplicaciones y capacidades explican para quien encaja la solucion: fabricantes con requisitos mecanicos, electricos, termicos, de comunicacion y series cortas o medias.",
+    "processGuide.fourTitle": "Proceso, documentacion y contacto conectados",
+    "processGuide.fourText": "El recorrido termina en un formulario validado que recoge aplicacion, producto, fase, volumen y necesidad tecnica. La documentacion aparece como apoyo a la decision, no como informacion suelta.",
     "docs.eyebrow": "Documentacion tecnica",
     "docs.title": "Informacion tecnica estructurada para decidir el siguiente paso.",
     "docs.text": "Ficha de producto, dimensiones, energia, tension, comunicacion, requisitos de integracion y rango operativo deben aparecer vinculados a una consulta clara, no dispersos en bloques repetidos.",
@@ -167,7 +182,7 @@ const translations = {
     "footer.scope": "Prototipo web base desarrollada",
     "feedback.invalid": "Revisa los campos obligatorios para poder enviar la consulta.",
     "feedback.invalidValue": "El formulario contiene valores no contemplados. Revisa los campos marcados.",
-    "feedback.sent": "Consulta preparada. En una version final se conectaria con el canal comercial.",
+    "feedback.sent": "Consulta validada correctamente. El equipo tecnico-comercial ya tendria los datos necesarios.",
     "feedback.added": "Producto incluido en la consulta tecnica."
   },
   en: {},
@@ -214,6 +229,18 @@ translations.en = {
   "apps.title": "Electric mobility applications where integration matters.",
   "company.title": "Capabilities focused on OEMs with demanding applications.",
   "process.title": "Three clear moments from quotation to first installation.",
+  "processGuide.eyebrow": "GUIDED PROCESS",
+  "processGuide.open": "Open guided process",
+  "processGuide.close": "Close guided process",
+  "processGuide.title": "How to browse the developed base version.",
+  "processGuide.oneTitle": "Orbital map as the main entry",
+  "processGuide.oneText": "The first screen organizes products, applications, company, process and documentation as an orbit. It keeps the current website structure recognizable while making navigation more visual and direct.",
+  "processGuide.twoTitle": "Products with progressive technical reading",
+  "processGuide.twoText": "The visual ribbon helps identify NMC, LFP and BMS families without overload. The product cards then compare energy, voltage, architecture and compatible applications to move the visit toward a qualified enquiry.",
+  "processGuide.threeTitle": "Applications and company with OEM focus",
+  "processGuide.threeText": "The applications and capabilities sections explain who the solution fits: manufacturers with mechanical, electrical, thermal and communication requirements, plus short or medium production runs.",
+  "processGuide.fourTitle": "Process, documentation and contact connected",
+  "processGuide.fourText": "The route ends in a validated form that collects application, product, stage, volume and technical need. Documentation supports the decision instead of appearing as loose information.",
   "docs.title": "Structured technical information to decide the next step.",
   "contact.title": "The clearer the need arrives, the faster the proposal becomes.",
   "form.name": "Name",
@@ -225,16 +252,35 @@ translations.en = {
   "form.stage": "Project stage",
   "form.volume": "Estimated volume",
   "form.message": "Technical need",
+  "form.placeholder": "Required energy, voltage, mechanical constraints, communications, deadlines or vehicle context.",
   "form.select": "Select an option",
   "form.optional": "Optional",
   "form.privacy": "I accept the processing of my data to answer this request.",
   "form.submit": "Send enquiry",
+  "apps.cta": "Validate application",
+  "option.bus": "Buses",
+  "option.sea": "Marine",
+  "option.agr": "Agricultural",
+  "option.vcl": "Light commercial vehicles",
+  "option.charge": "Mobile charging stations",
+  "option.rail": "Rail",
+  "option.unknown": "To be defined",
+  "option.system": "Complete system",
+  "option.compare": "Compare alternatives",
+  "option.quote": "Initial quotation",
+  "option.design": "Integration design",
+  "option.validation": "Technical validation",
+  "option.purchase": "Purchase or industrialisation",
+  "option.prototype": "Prototype",
+  "option.short": "Short series",
+  "option.medium": "Medium series",
+  "option.open": "To be defined",
   "footer.process": "Process",
   "footer.mailTitle": "Direct contact",
   "footer.scope": "Developed base web prototype",
   "feedback.invalid": "Review the required fields before sending the enquiry.",
   "feedback.invalidValue": "The form contains unsupported values. Review the marked fields.",
-  "feedback.sent": "Enquiry prepared. In a final version it would connect with the commercial channel.",
+  "feedback.sent": "Enquiry validated correctly. The technical-commercial team would have the necessary data.",
   "feedback.added": "Product included in the technical enquiry."
 };
 
@@ -274,6 +320,18 @@ translations.eu = {
   "apps.title": "Integrazioa garrantzitsua den mugikortasun elektrikoko aplikazioak.",
   "company.title": "Aplikazio zorrotzak dituzten OEMentzat bideratutako gaitasunak.",
   "process.title": "Hiru une argi aurrekontutik lehen instalaziora.",
+  "processGuide.eyebrow": "PROZESU GIDATUA",
+  "processGuide.open": "Ireki prozesu gidatua",
+  "processGuide.close": "Itxi prozesu gidatua",
+  "processGuide.title": "Web base garatua nola zeharkatu.",
+  "processGuide.oneTitle": "Orbita mapa sarrera nagusi gisa",
+  "processGuide.oneText": "Lehen pantailak produktuak, aplikazioak, enpresa, prozesua eta dokumentazioa orbita batean antolatzen ditu. Egungo webaren egitura ezaguna mantentzen du, nabigazio bisualago eta zuzenago batekin.",
+  "processGuide.twoTitle": "Produktuak irakurketa tekniko progresiboarekin",
+  "processGuide.twoText": "Zinta bisualak NMC, LFP eta BMS familiak identifikatzen laguntzen du gainkargarik gabe. Ondoren, fitxek energia, tentsioa, arkitektura eta aplikazio bateragarriak alderatzen dituzte kontsulta kualifikatu baterantz eramateko.",
+  "processGuide.threeTitle": "Aplikazioak eta enpresa OEM ikuspegiarekin",
+  "processGuide.threeText": "Aplikazio eta gaitasun atalek norentzat egokitzen den azaltzen dute: eskakizun mekaniko, elektriko, termiko eta komunikaziozkoak dituzten fabrikatzaileak, baita serie labur edo ertainak ere.",
+  "processGuide.fourTitle": "Prozesua, dokumentazioa eta kontaktua konektatuta",
+  "processGuide.fourText": "Ibilbidea balioztatutako formulario batean amaitzen da: aplikazioa, produktua, fasea, bolumena eta behar teknikoa jasotzen ditu. Dokumentazioak erabakia laguntzen du, informazio solte gisa agertu gabe.",
   "docs.title": "Hurrengo urratsa erabakitzeko informazio tekniko egituratua.",
   "contact.title": "Beharra zenbat eta argiago iritsi, orduan eta azkarrago proposamena.",
   "form.name": "Izena",
@@ -285,16 +343,35 @@ translations.eu = {
   "form.stage": "Proiektuaren fasea",
   "form.volume": "Aurreikusitako bolumena",
   "form.message": "Behar teknikoa",
+  "form.placeholder": "Behar den energia, tentsioa, muga mekanikoak, komunikazioak, epeak edo ibilgailuaren testuingurua.",
   "form.select": "Aukeratu aukera bat",
   "form.optional": "Aukerakoa",
   "form.privacy": "Nire datuen tratamendua onartzen dut eskaera honi erantzuteko.",
   "form.submit": "Bidali kontsulta",
+  "apps.cta": "Aplikazioa balioztatu",
+  "option.bus": "Autobusak",
+  "option.sea": "Itsasoa",
+  "option.agr": "Nekazaritza",
+  "option.vcl": "Ibilgailu komertzial arinak",
+  "option.charge": "Karga estazio mugikorrak",
+  "option.rail": "Trena",
+  "option.unknown": "Zehaztu gabe",
+  "option.system": "Sistema osoa",
+  "option.compare": "Alternatibak alderatu",
+  "option.quote": "Hasierako aurrekontua",
+  "option.design": "Integrazio diseinua",
+  "option.validation": "Balioztatze teknikoa",
+  "option.purchase": "Erosketa edo industrializazioa",
+  "option.prototype": "Prototipoa",
+  "option.short": "Serie laburra",
+  "option.medium": "Serie ertaina",
+  "option.open": "Zehaztu gabe",
   "footer.process": "Prozesua",
   "footer.mailTitle": "Kontaktu zuzena",
   "footer.scope": "Web base garatuaren prototipoa",
   "feedback.invalid": "Berrikusi derrigorrezko eremuak kontsulta bidali aurretik.",
   "feedback.invalidValue": "Formularioak aurreikusi gabeko balioak ditu. Berrikusi markatutako eremuak.",
-  "feedback.sent": "Kontsulta prestatuta. Azken bertsioan kanal komertzialarekin konektatuko litzateke.",
+  "feedback.sent": "Kontsulta behar bezala balioztatuta. Talde tekniko-komertzialak beharrezko datuak izango lituzke.",
   "feedback.added": "Produktua kontsulta teknikoan gehitu da."
 };
 
@@ -334,6 +411,18 @@ translations.fr = {
   "apps.title": "Applications de mobilite electrique ou l'integration compte.",
   "company.title": "Capacites centrees sur les OEM avec applications exigeantes.",
   "process.title": "Trois moments clairs du devis a la premiere installation.",
+  "processGuide.eyebrow": "PROCESSUS GUIDE",
+  "processGuide.open": "Ouvrir le processus guide",
+  "processGuide.close": "Fermer le processus guide",
+  "processGuide.title": "Comment parcourir la version base developpee.",
+  "processGuide.oneTitle": "Carte orbitale comme entree principale",
+  "processGuide.oneText": "Le premier ecran organise produits, applications, entreprise, processus et documentation sous forme d'orbite. Il conserve une structure reconnaissable tout en rendant la navigation plus visuelle et directe.",
+  "processGuide.twoTitle": "Produits avec lecture technique progressive",
+  "processGuide.twoText": "Le ruban visuel aide a identifier les familles NMC, LFP et BMS sans surcharge. Les fiches comparent ensuite energie, tension, architecture et applications compatibles pour mener vers une demande qualifiee.",
+  "processGuide.threeTitle": "Applications et entreprise orientees OEM",
+  "processGuide.threeText": "Les sections applications et capacites expliquent a qui s'adresse la solution: fabricants avec exigences mecaniques, electriques, thermiques et de communication, ainsi que series courtes ou moyennes.",
+  "processGuide.fourTitle": "Processus, documentation et contact connectes",
+  "processGuide.fourText": "Le parcours se termine par un formulaire valide qui recueille application, produit, phase, volume et besoin technique. La documentation soutient la decision au lieu d'etre dispersee.",
   "docs.title": "Information technique structuree pour decider la suite.",
   "contact.title": "Plus le besoin arrive clairement, plus la proposition est rapide.",
   "form.name": "Nom",
@@ -345,16 +434,35 @@ translations.fr = {
   "form.stage": "Phase du projet",
   "form.volume": "Volume estime",
   "form.message": "Besoin technique",
+  "form.placeholder": "Energie requise, tension, contraintes mecaniques, communications, delais ou contexte du vehicule.",
   "form.select": "Selectionner une option",
   "form.optional": "Optionnel",
   "form.privacy": "J'accepte le traitement de mes donnees pour repondre a cette demande.",
   "form.submit": "Envoyer la demande",
+  "apps.cta": "Valider l'application",
+  "option.bus": "Bus",
+  "option.sea": "Marine",
+  "option.agr": "Agricole",
+  "option.vcl": "Vehicules utilitaires legers",
+  "option.charge": "Stations de recharge mobiles",
+  "option.rail": "Rail",
+  "option.unknown": "A definir",
+  "option.system": "Systeme complet",
+  "option.compare": "Comparer les alternatives",
+  "option.quote": "Devis initial",
+  "option.design": "Conception d'integration",
+  "option.validation": "Validation technique",
+  "option.purchase": "Achat ou industrialisation",
+  "option.prototype": "Prototype",
+  "option.short": "Serie courte",
+  "option.medium": "Serie moyenne",
+  "option.open": "A definir",
   "footer.process": "Processus",
   "footer.mailTitle": "Contact direct",
   "footer.scope": "Prototype web base developpee",
   "feedback.invalid": "Verifiez les champs obligatoires avant d'envoyer la demande.",
   "feedback.invalidValue": "Le formulaire contient des valeurs non prevues. Verifiez les champs marques.",
-  "feedback.sent": "Demande preparee. Dans une version finale, elle serait connectee au canal commercial.",
+  "feedback.sent": "Demande validee correctement. L'equipe technico-commerciale aurait les donnees necessaires.",
   "feedback.added": "Produit inclus dans la demande technique."
 };
 
@@ -399,9 +507,122 @@ const productData = {
   }
 };
 
-productData.en = productData.es;
-productData.eu = productData.es;
-productData.fr = productData.es;
+productData.en = {
+  nmc: {
+    tag: "NMC series",
+    title: "Compact high-energy-density pack",
+    summary: "Series-built batteries with compact thickness, flexible mounting and horizontal or vertical integration for demanding applications.",
+    specs: [
+      ["35 kWh", "Energy"],
+      ["333 V / 666 V", "Nominal voltages"],
+      ["170 Wh/kg", "Specific energy"],
+      ["1320 x 810 x 133 mm", "Dimensions"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "LCV", "CHG", "RAIL"]
+  },
+  lfp: {
+    tag: "LFP series",
+    title: "Robust pack for lifetime, safety and scaling",
+    summary: "LFP-based solution for applications prioritising sustainability, stability, safety and reliable performance.",
+    specs: [
+      ["56 kWh", "Energy"],
+      ["335 V", "Nominal voltage"],
+      ["155 Wh/kg", "Specific energy"],
+      ["1185 x 880 x 240 mm", "Dimensions"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "LCV", "CHG", "RAIL"]
+  },
+  bms: {
+    tag: "Supermaster BMS",
+    title: "Single interface for parallel battery systems",
+    summary: "Management module that coordinates VCU communication, performance, safety and monitoring in multipack architectures.",
+    specs: [
+      ["2-20 packs", "Parallel management"],
+      ["CANbus 2.0b", "Communication"],
+      ["SAE J1939", "Protocol"],
+      ["-40 to 105 C", "Operating range"]
+    ],
+    apps: ["MULTIPACK", "VCU", "SAFETY", "OPS"]
+  }
+};
+
+productData.eu = {
+  nmc: {
+    tag: "NMC seriea",
+    title: "Energia dentsitate handiko pack trinkoa",
+    summary: "Seriean fabrikatutako bateriak, lodiera trinkoa, muntaketa malgua eta integrazio horizontala edo bertikala aplikazio zorrotzetarako.",
+    specs: [
+      ["35 kWh", "Energia"],
+      ["333 V / 666 V", "Tentsio nominalak"],
+      ["170 Wh/kg", "Energia espezifikoa"],
+      ["1320 x 810 x 133 mm", "Neurriak"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "VCL", "CHG", "RAIL"]
+  },
+  lfp: {
+    tag: "LFP seriea",
+    title: "Bizitza erabilgarria, segurtasuna eta eskalatzea lehenesten dituen pack sendoa",
+    summary: "LFP kimikan oinarritutako soluzioa, jasangarritasuna, egonkortasuna, segurtasuna eta errendimendu fidagarria lehenesten dituzten aplikazioetarako.",
+    specs: [
+      ["56 kWh", "Energia"],
+      ["335 V", "Tentsio nominala"],
+      ["155 Wh/kg", "Energia espezifikoa"],
+      ["1185 x 880 x 240 mm", "Neurriak"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "VCL", "CHG", "RAIL"]
+  },
+  bms: {
+    tag: "Supermaster BMS",
+    title: "Bateria paraleloetarako interfaze bakarra",
+    summary: "VCU komunikazioa, errendimendua, segurtasuna eta monitorizazioa koordinatzen dituen kudeaketa modulua multipack arkitekturetan.",
+    specs: [
+      ["2-20 pack", "Kudeaketa paraleloa"],
+      ["CANbus 2.0b", "Komunikazioa"],
+      ["SAE J1939", "Protokoloa"],
+      ["-40 eta 105 C", "Lan tartea"]
+    ],
+    apps: ["MULTIPACK", "VCU", "SAFETY", "OPS"]
+  }
+};
+
+productData.fr = {
+  nmc: {
+    tag: "Series NMC",
+    title: "Pack compact a haute densite energetique",
+    summary: "Batteries fabriquees en serie avec faible epaisseur, montage polyvalent et integration horizontale ou verticale pour applications exigeantes.",
+    specs: [
+      ["35 kWh", "Energie"],
+      ["333 V / 666 V", "Tensions nominales"],
+      ["170 Wh/kg", "Energie specifique"],
+      ["1320 x 810 x 133 mm", "Dimensions"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "VCL", "CHG", "RAIL"]
+  },
+  lfp: {
+    tag: "Series LFP",
+    title: "Pack robuste pour duree de vie, securite et mise a l'echelle",
+    summary: "Solution basee sur la chimie LFP pour les applications qui privilegient durabilite, stabilite, securite et performance fiable.",
+    specs: [
+      ["56 kWh", "Energie"],
+      ["335 V", "Tension nominale"],
+      ["155 Wh/kg", "Energie specifique"],
+      ["1185 x 880 x 240 mm", "Dimensions"]
+    ],
+    apps: ["BUS", "SEA", "AGR", "VCL", "CHG", "RAIL"]
+  },
+  bms: {
+    tag: "Supermaster BMS",
+    title: "Interface unique pour systemes de batteries en parallele",
+    summary: "Module de gestion coordonnant communication VCU, performance, securite et supervision dans les architectures multipack.",
+    specs: [
+      ["2-20 packs", "Gestion parallele"],
+      ["CANbus 2.0b", "Communication"],
+      ["SAE J1939", "Protocole"],
+      ["-40 a 105 C", "Plage de service"]
+    ],
+    apps: ["MULTIPACK", "VCU", "SAFETY", "OPS"]
+  }
+};
 
 let selectedLanguage = "es";
 let selectedProduct = "nmc";
@@ -412,7 +633,7 @@ let miniOrbitFrame = null;
 
 const formRules = {
   fields: new Set(["name", "company", "email", "country", "application", "product", "stage", "volume", "message", "privacy", "website"]),
-  required: new Set(["name", "company", "email", "application", "product", "stage", "privacy"]),
+  required: new Set(["name", "company", "email", "application", "product", "stage", "message", "privacy"]),
   application: new Set(["bus", "sea", "agr", "vcl", "charge", "rail", "unknown"]),
   product: new Set(["nmc", "lfp", "bms", "system", "compare"]),
   stage: new Set(["quote", "design", "validation", "purchase"]),
@@ -421,7 +642,7 @@ const formRules = {
   name: { min: 2, max: 80, pattern: /^[\p{L}\p{M} .'-]+$/u },
   company: { min: 2, max: 120, pattern: /^[\p{L}\p{M}0-9 .,&()/-]+$/u },
   country: { min: 0, max: 80, pattern: /^[\p{L}\p{M} .'-]*$/u },
-  message: { min: 0, max: 1400, pattern: /^[^<>{}[\]`]*$/ }
+  message: { min: 12, max: 1400, pattern: /^[^<>{}[\]`]*$/ }
 };
 
 function getText(key) {
@@ -454,7 +675,7 @@ function normalizeFieldValue(element) {
 }
 
 function renderProduct(productKey) {
-  const data = productData[selectedLanguage][productKey] || productData.es.nmc;
+  const data = productData[selectedLanguage]?.[productKey] || productData.es[productKey] || productData.es.nmc;
   selectedProduct = productKey;
 
   productTabs.forEach((tab) => {
@@ -580,6 +801,16 @@ function applyLanguage(lang) {
     if (value) element.setAttribute("placeholder", value);
   });
 
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const value = getText(element.dataset.i18nAriaLabel);
+    if (value) element.setAttribute("aria-label", value);
+  });
+
+  if (processTrigger && processPanel) {
+    const isOpen = processPanel.classList.contains("is-open");
+    processTrigger.setAttribute("aria-label", getText(isOpen ? "processGuide.close" : "processGuide.open"));
+  }
+
   if (currentLang) currentLang.textContent = selectedLanguage.toUpperCase();
   renderProduct(selectedProduct);
 }
@@ -589,6 +820,7 @@ function validateLeadForm(form) {
   const controls = Array.from(form.elements).filter(isEditableControl);
 
   controls.forEach((element) => element.setCustomValidity(""));
+  controls.forEach((element) => element.removeAttribute("aria-invalid"));
   controls.forEach(normalizeFieldValue);
 
   const unexpected = controls.find((element) => element.name && !formRules.fields.has(element.name));
@@ -646,6 +878,7 @@ function validateLeadForm(form) {
   ];
 
   checks.forEach(([element, valid]) => {
+    element.setAttribute("aria-invalid", String(!valid));
     if (!valid) {
       element.setCustomValidity(getText("feedback.invalidValue"));
       if (!firstInvalid) firstInvalid = element;
@@ -653,6 +886,20 @@ function validateLeadForm(form) {
   });
 
   return { valid: !firstInvalid, firstInvalid };
+}
+
+function setProcessPanel(open) {
+  if (!processPanel || !processTrigger) return;
+  processPanel.classList.toggle("is-open", open);
+  processPanel.setAttribute("aria-hidden", String(!open));
+  processTrigger.setAttribute("aria-expanded", String(open));
+  processTrigger.setAttribute("aria-label", getText(open ? "processGuide.close" : "processGuide.open"));
+
+  if (open) {
+    processPanel.focus({ preventScroll: true });
+  } else {
+    processTrigger.focus({ preventScroll: true });
+  }
 }
 
 if (menuButton && mainNav) {
@@ -782,16 +1029,32 @@ if (addProductButton && productSelect) {
   });
 }
 
+if (processTrigger && processPanel) {
+  processTrigger.addEventListener("click", () => {
+    setProcessPanel(!processPanel.classList.contains("is-open"));
+  });
+}
+
+if (processClose) {
+  processClose.addEventListener("click", () => setProcessPanel(false));
+}
+
 if (leadForm && feedback) {
   leadForm.addEventListener("input", (event) => {
-    if (isEditableControl(event.target)) event.target.setCustomValidity("");
+    if (isEditableControl(event.target)) {
+      event.target.setCustomValidity("");
+      event.target.removeAttribute("aria-invalid");
+    }
   });
 
   leadForm.addEventListener("change", (event) => {
-    if (isEditableControl(event.target)) event.target.setCustomValidity("");
+    if (isEditableControl(event.target)) {
+      event.target.setCustomValidity("");
+      event.target.removeAttribute("aria-invalid");
+    }
   });
 
-  leadForm.addEventListener("submit", (event) => {
+  leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const result = validateLeadForm(leadForm);
 
@@ -802,10 +1065,86 @@ if (leadForm && feedback) {
       return;
     }
 
-    feedback.textContent = getText("feedback.sent");
-    leadForm.reset();
+    const submitButton = leadForm.querySelector("button[type='submit']");
+    submitButton?.setAttribute("disabled", "disabled");
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: "POST",
+        body: new FormData(leadForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      const payload = await response.json().catch(() => null);
+
+      if (!response.ok || !payload?.ok) {
+        feedback.textContent = payload?.message || getText("feedback.invalidValue");
+        if (Array.isArray(payload?.fields)) {
+          payload.fields.forEach((field) => {
+            const control = leadForm.elements[field];
+            if (control instanceof HTMLElement) control.setAttribute("aria-invalid", "true");
+          });
+        }
+        return;
+      }
+
+      feedback.textContent = payload.message || getText("feedback.sent");
+      leadForm.reset();
+    } catch {
+      feedback.textContent = getText("feedback.invalidValue");
+    } finally {
+      submitButton?.removeAttribute("disabled");
+    }
   });
 }
+
+document.addEventListener("click", (event) => {
+  if (!(event.target instanceof Element)) return;
+
+  if (!event.target.closest(".language-widget") && languageMenu && languageButton) {
+    languageMenu.classList.remove("is-open");
+    languageButton.setAttribute("aria-expanded", "false");
+  }
+
+  if (!event.target.closest(".nav-map-widget") && navMapMenu && navMapButton) {
+    navMapMenu.classList.remove("is-open");
+    navMapButton.setAttribute("aria-expanded", "false");
+  }
+
+  if (
+    !event.target.closest(".process-widget") &&
+    processPanel &&
+    processTrigger &&
+    processPanel.classList.contains("is-open")
+  ) {
+    setProcessPanel(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+
+  if (mainNav && menuButton) {
+    mainNav.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+
+  if (languageMenu && languageButton) {
+    languageMenu.classList.remove("is-open");
+    languageButton.setAttribute("aria-expanded", "false");
+  }
+
+  if (navMapMenu && navMapButton) {
+    navMapMenu.classList.remove("is-open");
+    navMapButton.setAttribute("aria-expanded", "false");
+  }
+
+  if (processPanel && processPanel.classList.contains("is-open")) {
+    setProcessPanel(false);
+  }
+});
 
 if (scrollTopButton) {
   const updateScrollTopVisibility = () => {
